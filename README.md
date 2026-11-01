@@ -176,17 +176,49 @@ Functional tests: Windows blocked Control Panel access and, after configuring th
 
 ## Evidence and screenshots
 
-Add your own screenshots to `screenshots/` and reference them here, for example:
+The following screenshots were captured from the working VirtualBox lab.
 
-- `screenshots/01-ad-ous.png` — Organizational Units in Active Directory Users and Computers.
-- `screenshots/02-security-groups.png` — Group membership verification.
-- `screenshots/03-gpo-links.png` — GPO links in Group Policy Management.
-- `screenshots/04-it-gpresult.png` — `IT Security Policy` applied to TARGET-PC.
-- `screenshots/05-it-registry-validation.png` — `InactivityTimeoutSecs = 900` and `Deny_All = 1`.
-- `screenshots/06-cs-gpresult.png` — `CS User Policy` applied to Daniel Wilson.
-- `screenshots/07-cs-restrictions.png` — User-facing restriction message.
+### Active Directory structure
 
-> Before publishing screenshots, remove passwords, personal information, tokens, and anything that should remain private. This lab uses fictional employee accounts.
+![Organizational Units in Active Directory](screenshots/01-ad-ous.png)
+
+*Organizational Units organized by department under `facu.local`.*
+
+![IT users and security groups](screenshots/02-security-groups.png)
+
+*IT OU containing security groups and test user accounts.*
+
+### Group Policy scope
+
+![IT Security Policy GPO links](screenshots/03-it-gpo-links.png)
+
+*`IT Security Policy` linked to the IT and Workstations OUs.*
+
+![Customer Support User Policy link](screenshots/04-cs-gpo-links.png)
+
+*`CS User Policy` linked to the CustomerSupport OU.*
+
+### Workstation policy validation
+
+![IT GPO applied to TARGET-PC](screenshots/05-it-gpresult.png)
+
+*`gpresult` confirms that TARGET-PC receives `IT Security Policy`.*
+
+![Inactivity and removable storage policy registry values](screenshots/06-it-registry-validation.png)
+
+*Registry checks show a 900-second inactivity timeout and `Deny_All = 1`. The screenshot also contains earlier permission errors from a non-elevated `gpresult` attempt; the policy values themselves were retrieved successfully.*
+
+### Customer Support restrictions
+
+![Command Prompt blocked by administrator](screenshots/07-cs-cmd-blocked.png)
+
+*Command Prompt blocked for the Customer Support test user.*
+
+![Control Panel restricted by administrator](screenshots/08-cs-control-panel-blocked.png)
+
+*Windows blocks Control Panel access under the Customer Support user policy.*
+
+> The screenshots document configuration and observable behavior in a test environment. They do not contain production systems.
 
 ## Skills demonstrated
 
