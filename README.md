@@ -10,6 +10,20 @@ The lab uses a Windows Server domain controller and a domain-joined Windows 10 w
 
 > **Environment:** Isolated home lab for learning and demonstration; not a production deployment.
 
+## Verified outcomes
+
+| Test | Observed result |
+|---|---|
+| Domain membership | `TARGET-PC` joined `facu.local` |
+| Domain controller discovery | `ADDC01.facu.local` (`192.168.10.7`) |
+| IT workstation policy | `IT Security Policy` shown in `gpresult` |
+| Inactivity limit | `InactivityTimeoutSecs = 900` |
+| Removable storage policy | `Deny_All = 1` |
+| Customer Support policy | `CS User Policy` shown in user `gpresult` |
+| Customer Support restrictions | Control Panel and CMD blocked |
+
+**Portfolio highlights:** [Architecture](#lab-architecture) · [GPO troubleshooting](#phase-4--domain-join-validation-and-troubleshooting) · [Evidence screenshots](#evidence-and-screenshots) · [Lessons learned](#troubleshooting-lessons)
+
 ## Lab architecture
 
 | Component | Hostname / Domain | Address | Purpose |
